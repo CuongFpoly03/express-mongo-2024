@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Tất cả sản phẩm</h1>
+      <% products.forEch(product => { %>
+        <div>
+          <h4 class="text-2xl font-bold"><%= product.name %></h4> 
+          <p class="text-red-700"><%= product.price %></p>
+          <span class="border-2 border-solid border-black"><%= product.quantity %></span>
+          <form action="/products/<%= product._id %>/delete" method="POST">
+            <button type="submit">Xoá</button>  
+          </form>
+        </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
